@@ -1,0 +1,2 @@
+# eval_qwen: Tinker + Qwen LoCoMo 评估（位于 general-agentic-memory-claude 内）
+openai>=1.0.0
