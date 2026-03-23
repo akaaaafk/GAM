@@ -8,7 +8,7 @@ cd "$PROJECT_ROOT"
 base_outputdir="${OUTDIR:-./results_qwen/hotpotqa}"
 mkdir -p "$base_outputdir"
 
-for dataset in "eval_400" "eval_1600" "eval_3200"
+for dataset in "eval_1600"
 do
     echo "Processing dataset: $dataset"
     outputdir=$base_outputdir/${dataset}

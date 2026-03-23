@@ -18,16 +18,25 @@ For BM25 retrieval, [Pyserini](https://github.com/castorini/pyserini) also requi
 
 ## Data
 
-Download datasets and place them as follows:
+Place datasets under `data/` as follows:
 
 ```
 data/
 ├── locomo/locomo10.json
-├── hotpotqa/eval_400.json
-│              eval_1600.json
-│              eval_3200.json
-├── ruler/*.jsonl
-├── narrativeqa/
+├── hotpotqa/eval_1600.json
+├── ruler/cwe.jsonl
+│        fwe.jsonl
+│        niah_single_1.jsonl
+│        niah_single_2.jsonl
+│        niah_single_3.jsonl
+│        niah_multikey_1.jsonl
+│        niah_multikey_2.jsonl
+│        niah_multikey_3.jsonl
+│        niah_multiquery.jsonl
+│        niah_multivalue.jsonl
+│        vt.jsonl
+│        qa_1.jsonl
+│        qa_2.jsonl
 └── longmemeval_s/longmemeval_s_cleaned.json
 ```
 
@@ -51,7 +60,6 @@ Run evaluations:
 bash scripts/eval_locomo.sh
 bash scripts/eval_hotpotqa.sh
 bash scripts/eval_ruler.sh
-bash scripts/eval_narrativeqa.sh
 ```
 
 Or directly:
@@ -64,7 +72,7 @@ python -m eval.locomo_test \
     --inference-profile-id $BEDROCK_INFERENCE_PROFILE_ID
 
 python -m eval.hotpotqa_run_bedrock \
-    --data data/hotpotqa/eval_400.json \
+    --data data/hotpotqa/eval_1600.json \
     --outdir results/hotpotqa
 
 python -m eval.ruler_run_bedrock \
